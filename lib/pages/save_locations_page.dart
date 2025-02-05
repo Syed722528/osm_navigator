@@ -10,15 +10,15 @@ class SavedLocationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black, // Background color set to black
+      backgroundColor: Colors.white, // Background color set to black
       appBar: AppBar(
         centerTitle: true,
         title: Text(
           'Saved Locations',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.black),
         ),
-        backgroundColor: Colors.black,
-        foregroundColor: Colors.white,
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
         elevation: 0,
       ),
       body: saved.isEmpty
@@ -33,7 +33,7 @@ class SavedLocationPage extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Card(
-                    color: Colors.white, // Card color set to white
+                    color: Colors.black, // Card color set to white
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -48,7 +48,7 @@ class SavedLocationPage extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black,
+                              color: Colors.white,
                             ),
                           ),
                           SizedBox(height: 8),
@@ -56,7 +56,7 @@ class SavedLocationPage extends StatelessWidget {
                             location.address,
                             style: TextStyle(
                               fontSize: 14,
-                              color: Colors.black.withOpacity(0.7),
+                              color: Colors.white,
                             ),
                           ),
                           SizedBox(height: 16),
@@ -67,14 +67,14 @@ class SavedLocationPage extends StatelessWidget {
                                 children: [
                                   Icon(
                                     Icons.location_on,
-                                    color: Colors.black,
+                                    color: Colors.white,
                                     size: 20,
                                   ),
                                   SizedBox(width: 5),
                                   Text(
                                     "${location.latitude}, ${location.longitude}",
                                     style: TextStyle(
-                                      color: Colors.black.withOpacity(0.6),
+                                      color: Colors.white,
                                       fontSize: 12,
                                     ),
                                   ),
@@ -83,7 +83,7 @@ class SavedLocationPage extends StatelessWidget {
                               IconButton(
                                 icon: Icon(
                                   Icons.delete,
-                                  color: Colors.black,
+                                  color: Colors.white,
                                 ),
                                 onPressed: () {
                                   // Handle the deletion logic here

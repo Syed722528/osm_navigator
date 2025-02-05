@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:osm_navigator/pages/save_locations_page.dart';
 import 'package:osm_navigator/provider/map_providers.dart';
 import 'package:provider/provider.dart';
 
