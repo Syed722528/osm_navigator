@@ -23,7 +23,7 @@ A feature-rich Flutter application integrating MapBox and OpenStreetMap for loca
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/flutter-mapbox-app.git
+git clone https://github.com/Syed722528/osm_navigator.git
 ```
 
 2. Navigate to project directory
@@ -46,20 +46,6 @@ class ApiConstants {
 }
 ```
 
-## Platform Specific Setup
-
-### Android
-1. Add MapBox token in `android/app/src/main/res/values/strings.xml`:
-```xml
-<string name="mapbox_access_token">YOUR_MAPBOX_API_KEY</string>
-```
-
-### iOS
-1. Add MapBox token in `ios/Runner/Info.plist`:
-```xml
-<key>MGLMapboxAccessToken</key>
-<string>YOUR_MAPBOX_API_KEY</string>
-```
 
 ## Usage
 
@@ -81,5 +67,5 @@ flutter run
 
 ## Contact
 
-Syed Hassan - [@ysyedHassan](https://www.linkedin.com/in/syed-hassan-abrar-11713a1b0/)
+Syed Hassan - [@syedHassan](https://www.linkedin.com/in/syed-hassan-abrar-11713a1b0/)
 Project Link: [https://github.com/yourusername/flutter-mapbox-app](https://github.com/Syed722528/osm_navigator.git)
