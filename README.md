@@ -28,7 +28,7 @@ git clone https://github.com/Syed722528/osm_navigator.git
 
 2. Navigate to project directory
 ```bash
-cd flutter-mapbox-app
+cd osm_navigator
 ```
 
 3. Install dependencies
@@ -56,7 +56,7 @@ flutter run
 
 ## Dependencies
 
-- mapbox_gl
+- flutter_maps
 - provider
 - geolocator
 - http
