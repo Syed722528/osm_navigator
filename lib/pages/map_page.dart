@@ -34,6 +34,7 @@ class _MapPageState extends State<MapPage> {
     for (var controller in controllers) {
       controller.dispose();
     }
+    mapController.dispose();
     super.dispose();
   }
 
@@ -187,9 +188,11 @@ class _MapPageState extends State<MapPage> {
   FlutterMap _buildMap() {
     return FlutterMap(
       mapController: mapController.mapController,
+      
       options: MapOptions(
         initialCenter: LatLng(31.5204, 74.3587),
         initialZoom: 8,
+        initialRotation: BorderSide.strokeAlignInside,
         onTap: (tapPosition, point) =>
             mapController.handleMapTap(point, context),
       ),

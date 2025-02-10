@@ -1,5 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
@@ -24,6 +26,10 @@ class MapControllerHelper {
 
   MapController get mapController => _mapController;
 
+
+  void dispose(){
+    _mapController.dispose();
+  }
   void addTextField() {
     controllers.add(TextEditingController());
   }
@@ -61,8 +67,29 @@ class MapControllerHelper {
           color: Colors.red,
           size: 45,
         )));
+    _mapController.move(
+      position,
+      15,
+    );
+  }
 
-    _mapController.move(position, 13);
+  void animateToLocation(LatLng target) {
+    final start = _mapController.camera.center;
+    final latDiff = target.latitude - start.latitude;
+    final lngDiff = target.longitude - start.longitude;
+    const steps = 30;
+    var currentStep = 0;
+
+    Timer.periodic(Duration(milliseconds: 16), (timer) {
+      if (currentStep < steps) {
+        final lat = start.latitude + (latDiff * currentStep / steps);
+        final lng = start.longitude + (lngDiff * currentStep / steps);
+        mapController.move(LatLng(lat, lng), 15);
+        currentStep++;
+      } else {
+        timer.cancel();
+      }
+    });
   }
 
 //--------------------Function to call location func and add marker   -----------------------//
@@ -231,6 +258,4 @@ class MapControllerHelper {
       ),
     );
   }
-
-  
 }
